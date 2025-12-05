@@ -492,6 +492,29 @@
         border-top: 1px solid var(--border-color);
         background-color: var(--bg-dark-card);
       }
+      /* Estilização para Justificar o texto */
+      .text-formatted p {
+        /* Garante que o texto se alinhe à esquerda, que é a melhor prática para web */
+        text-align: left !important; 
+      }
+      
+      /* Estilo da Imagem e container na seção Quem Somos */
+      .about-image-container {
+        border: 2px solid var(--primary-color);
+        border-radius: 1rem;
+        overflow: hidden;
+        /* Sombra ajustada para ser mais forte e elegante */
+        box-shadow: 0 5px 30px rgba(var(--primary-color-rgb), 0.7); 
+      }
+      .about-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        /* Estica um pouco mais verticalmente */
+        aspect-ratio: 4 / 5; 
+        object-fit: cover;
+      }
+
 
       /* Footer */
       footer.bg-dark {
@@ -661,7 +684,8 @@
       <section id="quem-somos" class="about-section">
         <div class="container py-md-5">
             <div class="row justify-content-center align-items-center g-5">
-                <div class="col-lg-6">
+                <!-- TEXTO AGORA OCUPANDO col-lg-6 -->
+                <div class="col-lg-6 text-formatted"> 
                     <span class="font-tech-display text-accent">Nossa História</span>
                     <h2 class="display-5 fw-bolder text-light mb-4 mt-2">
                         KODEO: Sua Especialista em Conteúdo que Gera Resultados.
@@ -685,9 +709,16 @@
                       Ver Nosso Método
                     </a>
                 </div>
-                <div class="col-lg-4 text-center d-none d-lg-block">
-                    <!-- Ilustração conceitual de Estratégia e Marketing -->
-                    <i class="fas fa-magic fa-10x" style="color: var(--primary-color); opacity: 0.7;"></i>
+                <!-- IMAGEM AGORA OCUPANDO col-lg-6 -->
+                <div class="col-lg-6 text-center d-none d-lg-block">
+                    <div class="about-image-container">
+                        <!-- IMAGEM REAL DO GITHUB INSERIDA AQUI -->
+                        <img 
+                            src="../src/upload/imagem_kode_escritorio_pessoa.jpg" 
+                            alt="Equipe KODEO Social Media reunida em escritório moderno planejando estratégia de posts para Instagram, Facebook e LinkedIn."
+                            class="about-image"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
