@@ -132,6 +132,16 @@
         font-size: 1.25rem; 
       }
 
+      /* Novo estilo para os links do Navbar */
+      .navbar-lp-link {
+          color: var(--secondary-color) !important;
+          font-weight: 600;
+          transition: color 0.2s;
+      }
+      .navbar-lp-link:hover {
+          color: var(--text-light) !important;
+      }
+
       /* Formulário de Captura (Removido, mantendo apenas o estilo se necessário) */
       .form-capture-card {
         background-color: var(--bg-dark-card);
@@ -364,10 +374,30 @@
       .pricing-card-highlight ul li i {
           color: var(--primary-color); /* Ícones do destaque roxos */
       }
-
+      /* NOVO ESTILO: Botões menores */
       .btn-pricing {
           margin-top: auto;
+          font-size: 0.9rem; /* Fonte menor */
+          padding: 0.5rem 1.25rem; /* Padding menor */
       }
+      /* NOVO ESTILO: Botão do plano Autoridade (Verde de Ação) */
+      .btn-autoridade {
+          background-color: var(--accent-color) !important;
+          border-color: var(--accent-color) !important;
+          color: var(--text-dark-original) !important;
+      }
+      /* NOVO ESTILO: Botões dos planos Essência e Premium (Roxo Primário) */
+      .btn-essencia-premium {
+          background-color: var(--primary-color) !important;
+          border-color: var(--primary-color) !important;
+          color: var(--text-light) !important;
+      }
+      .btn-essencia-premium:hover {
+        background-color: #6a40c6 !important; /* Roxo mais escuro no hover */
+        border-color: #6a40c6 !important;
+        color: var(--text-light) !important;
+      }
+
 
       /* Seção Método (Processo) */
       .process-section {
@@ -455,6 +485,13 @@
         background-color: var(--bg-dark-card);
         border-top: 1px solid var(--border-color);
       }
+      
+      /* Seção Quem Somos */
+      .about-section {
+        padding: 4rem 0;
+        border-top: 1px solid var(--border-color);
+        background-color: var(--bg-dark-card);
+      }
 
       /* Footer */
       footer.bg-dark {
@@ -494,47 +531,75 @@
     </script>
   </head>
   <body data-bs-theme="dark">
-    <!-- CABEÇALHO - NOME KODEO -->
+    <!-- CABEÇALHO - NOME KODEO E NAVBAR -->
     <header class="lp-header sticky-top">
       <div class="container">
-        <a
-          class="navbar-brand-lp"
-          href="#"
-          aria-label="KODEO - Página Inicial"
-        >
-          <!-- SVG Logo KODEO (MANTIDO) -->
-          <svg
-            class="logo-svg-header"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Logo Prisma"
-          >
-            <circle cx="50" cy="50" r="3" fill="#E1E1E6" />
-            <path
-              class="face"
-              d="M 50 50 L 15 30 L 15 70 Z"
-              fill="var(--primary-color)"
-            />
-            <path
-              class="face"
-              d="M 50 50 L 15 70 L 85 70 Z"
-              fill="var(--accent-color)"
-            />
-            <path
-              class="face"
-              d="M 50 50 L 85 70 L 85 30 Z"
-              fill="#ff9900"
-            />
-            <path
-              class="face"
-              d="M 50 50 L 85 30 L 15 30 Z"
-              fill="var(--primary-color)"
-            />
-          </svg>
-          <!-- NOME CORRIGIDO PARA KODEO -->
-          <span>KODEO</span> 
-        </a>
+        <nav class="navbar navbar-expand-lg">
+            <a
+              class="navbar-brand-lp"
+              href="#hero-lp"
+              aria-label="KODEO - Página Inicial"
+            >
+              <!-- SVG Logo KODEO (MANTIDO) -->
+              <svg
+                class="logo-svg-header"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Logo Prisma"
+              >
+                <circle cx="50" cy="50" r="3" fill="#E1E1E6" />
+                <path
+                  class="face"
+                  d="M 50 50 L 15 30 L 15 70 Z"
+                  fill="var(--primary-color)"
+                />
+                <path
+                  class="face"
+                  d="M 50 50 L 15 70 L 85 70 Z"
+                  fill="var(--accent-color)"
+                />
+                <path
+                  class="face"
+                  d="M 50 50 L 85 70 L 85 30 Z"
+                  fill="#ff9900"
+                />
+                <path
+                  class="face"
+                  d="M 50 50 L 85 30 L 15 30 Z"
+                  fill="var(--primary-color)"
+                />
+              </svg>
+              <span>KODEO</span> 
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-light"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- NOVOS LINKS DE NAVEGAÇÃO INTERNA -->
+                    <li class="nav-item">
+                        <a class="nav-link navbar-lp-link me-3" href="#quem-somos">Quem Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-lp-link me-3" href="#deliverables-lp">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-lp-link me-3" href="#testimonials-lp">Nossos Trabalhos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-lp-link me-3" href="#pricing-lp">Planos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-lp-link" href="https://api.whatsapp.com/send?phone=5511980960531" target="_blank">
+                           <i class="fab fa-whatsapp me-1"></i> Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
       </div>
     </header>
 
@@ -555,8 +620,8 @@
                 CRIE POSTS MAGNÉTICOS PARA INSTAGRAM, FACEBOOK E LINKEDIN.
               </h1>
               <p class="lead fw-semibold text-secondary mb-4">
-                Pare de perder vendas com conteúdo amador. A KODEO cria posts
-                profissionais focados em engajamento, autoridade e conversão
+                Pare de perder vendas com conteúdo amador. A <strong>KODEO</strong> cria posts
+                profissionais focados em <strong>engajamento, autoridade e conversão</strong>
                 para todas as suas redes sociais.
               </p>
               <div class="checklist-item-hero">
@@ -589,6 +654,42 @@
             </div>
             
           </div>
+        </div>
+      </section>
+      
+      <!-- NOVA SEÇÃO: QUEM SOMOS -->
+      <section id="quem-somos" class="about-section">
+        <div class="container py-md-5">
+            <div class="row justify-content-center align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="font-tech-display text-accent">Nossa História</span>
+                    <h2 class="display-5 fw-bolder text-light mb-4 mt-2">
+                        KODEO: Sua Especialista em Conteúdo que Gera Resultados.
+                    </h2>
+                    <p class="lead text-secondary mb-4">
+                        Nós somos a **KODEO Social Media**, uma equipe focada em transformar a
+                        presença digital de empreendedores e empresas, especialmente no
+                        nicho de serviços e B2B (business-to-business).
+                    </p>
+                    <p class="text-secondary">
+                        Acreditamos que um bom post não é apenas bonito, mas é uma peça
+                        estratégica de marketing que deve ter o objetivo claro de **vender**
+                        ou construir **autoridade**. Nossos posts são desenhados para
+                        maximizar o engajamento no Instagram, a credibilidade no LinkedIn
+                        e a comunidade no Facebook.
+                    </p>
+                    <a 
+                      href="#metodo-lp"
+                      class="btn btn-primary fw-bold mt-3"
+                    >
+                      Ver Nosso Método
+                    </a>
+                </div>
+                <div class="col-lg-4 text-center d-none d-lg-block">
+                    <!-- Ilustração conceitual de Estratégia e Marketing -->
+                    <i class="fas fa-magic fa-10x" style="color: var(--primary-color); opacity: 0.7;"></i>
+                </div>
+            </div>
         </div>
       </section>
 
@@ -672,15 +773,15 @@
               </div>
               </div>
 
-            <button class="carousel-btn right-btn" onclick="scrollNiches(1)" aria-label="Próximo">
-                <i class="fas fa-chevron-right"></i>
+            <button class="carousel-btn left-btn" onclick="scrollNiches(-1)" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
             </button>
           </div>
           
         </div>
       </section>
 
-      <!-- SEÇÃO ENTREGÁVEIS - FOCO EM BENEFÍCIOS DO SOCIAL MEDIA -->
+      <!-- SEÇÃO ENTREGÁVEIS - SERVIÇOS (ANTIGO DELIVERABLES) -->
       <section id="deliverables-lp" class="py-5">
         <div class="container py-md-5">
           <div class="row justify-content-center">
@@ -787,7 +888,7 @@
         </div>
       </section>
 
-      <!-- NOVA SEÇÃO: PREÇOS COM NOMES MELHORADOS E CORES AJUSTADAS -->
+      <!-- NOVA SEÇÃO: PREÇOS (ID DEIXADO COMO PRICING-LP para ser o link Planos) -->
       <section id="pricing-lp" class="pricing-section">
         <div class="container py-md-5">
             <div class="row justify-content-center">
@@ -821,14 +922,14 @@
                         <a 
                           href="https://api.whatsapp.com/send?phone=5511980960531&text=Ol%C3%A1%2C%20gostaria%20de%20contratar%20o%20Plano%20Ess%C3%AAncia%20de%20R%24%20499."
                           target="_blank"
-                          class="btn btn-accent btn-pricing fw-bold"
+                          class="btn btn-essencia-premium btn-pricing fw-bold"
                         >
-                          COMEÇAR COM ESSÊNCIA
+                          CONTRATAR AGORA
                         </a>
                     </div>
                 </div>
 
-                <!-- Plano AUTORIDADE (DESTAQUE - COR ROXA) -->
+                <!-- Plano AUTORIDADE (DESTAQUE - COR VERDE/ACCENT) -->
                 <div class="col-md-6 col-lg-4">
                     <div class="pricing-card pricing-card-highlight">
                         <i class="fas fa-crown fa-2x mb-3" style="color: var(--primary-color);"></i>
@@ -840,15 +941,15 @@
                             <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Criação de artes profissionais</li>
                             <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Copywriting de legenda para todas as redes</li>
                             <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Otimização e Agendamento Completo</li>
-                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Suporte para **LinkedIn** (B2B)</li>
-                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> **4 Reels/Vídeos** Curtos por mês</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> Suporte para <strong>LinkedIn</strong> (B2B)</li>
+                            <li><i class="fas fa-check" style="color: var(--primary-color);"></i> <strong>4 Reels/Vídeos</strong> Curtos por mês</li>
                         </ul>
                         <a 
                           href="https://api.whatsapp.com/send?phone=5511980960531&text=Ol%C3%A1%2C%20gostaria%20de%20contratar%20o%20Plano%20Autoridade%20de%20R%24%20999%20(Recomendado)."
                           target="_blank"
-                          class="btn btn-accent btn-pricing fw-bold"
+                          class="btn btn-autoridade btn-pricing fw-bold"
                         >
-                          ESCOLHER PLANO AUTORIDADE
+                          ESCOLHER PLANO
                         </a>
                     </div>
                 </div>
@@ -865,15 +966,15 @@
                             <li><i class="fas fa-check"></i> Criação de artes profissionais</li>
                             <li><i class="fas fa-check"></i> Gestão de Copywriting e Engajamento</li>
                             <li><i class="fas fa-check"></i> Otimização e Agendamento Completo</li>
-                            <li><i class="fas fa-check"></i> Suporte total para **LinkedIn**</li>
-                            <li><i class="fas fa-check"></i> **8 Reels/Vídeos** Curtos por mês</li>
+                            <li><i class="fas fa-check"></i> Suporte total para <strong>LinkedIn</strong></li>
+                            <li><i class="fas fa-check"></i> <strong>8 Reels/Vídeos</strong> Curtos por mês</li>
                         </ul>
                         <a 
                           href="https://api.whatsapp.com/send?phone=5511980960531&text=Ol%C3%A1%2C%20gostaria%20de%20contratar%20o%20Plano%20Premium%20de%24%201499."
                           target="_blank"
-                          class="btn btn-accent btn-pricing fw-bold"
+                          class="btn btn-essencia-premium btn-pricing fw-bold"
                         >
-                          CONTRATAR PLANO PREMIUM
+                          CONTRATAR AGORA
                         </a>
                     </div>
                 </div>
@@ -947,11 +1048,11 @@
         </div>
       </section>
 
-      <!-- SEÇÃO DEPOIMENTOS - ADAPTADO PARA SOCIAL MEDIA -->
+      <!-- SEÇÃO DEPOIMENTOS - NOSSOS TRABALHOS (ID ALTERADO PARA FACILITAR A NAVEGAÇÃO) -->
       <section id="testimonials-lp" class="testimonials-section">
         <div class="container">
           <h2 class="text-center mb-5 text-light">
-            Resultados que nossos clientes alcançaram
+            Nossos Trabalhos: Resultados e Depoimentos
           </h2>
           <div class="row g-4 justify-content-center">
             <div class="col-md-6 col-lg-4">
@@ -1050,6 +1151,12 @@
         </div>
       </section>
     </main>
+
+    <!-- Adiciona o script do Bootstrap para o toggle do navbar funcionar no mobile -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- RODAPÉ PROFISSIONALIZADO -->
     <footer class="bg-dark text-white pt-5 pb-3">
